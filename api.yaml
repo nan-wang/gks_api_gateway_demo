@@ -1,0 +1,36 @@
+swagger: '2.0'
+info:
+  title: smoothie-api
+  description: Send me Smoothies
+  version: 1.0.0
+schemes:
+  - https
+produces:
+  - application/json
+paths:
+  /listSmoothies:
+    get:
+      summary: Get the best smoothies
+      consumes:
+      - application/json
+      operationId: listSmoothies
+      x-google-backend:
+        address:  https://europe-west2-PROJECT.cloudfunctions.net/listSmoothies
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: string
+  /orderSmoothie:
+    post:
+      summary: Order a wonderful smoothie
+      consumes:
+      - application/json
+      operationId: orderSmoothie
+      x-google-backend:
+        address:  https://europe-west2-PROJECT.cloudfunctions.net/orderSmoothie
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: string
