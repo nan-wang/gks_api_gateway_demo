@@ -15,7 +15,7 @@ paths:
       - application/json
       operationId: listSmoothies
       x-google-backend:
-        address:  https://europe-west2-PROJECT.cloudfunctions.net/listSmoothies
+        address: https://us-central1-api-gateway-demo-456905.cloudfunctions.net/listSmoothies 
       responses:
         '200':
           description: Successful response
@@ -28,7 +28,7 @@ paths:
       - application/json
       operationId: orderSmoothie
       x-google-backend:
-        address:  https://europe-west2-PROJECT.cloudfunctions.net/orderSmoothie
+        address:  https://us-central1-api-gateway-demo-456905.cloudfunctions.net/orderSmoothie
       responses:
         '200':
           description: Successful response
