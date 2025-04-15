@@ -17,4 +17,5 @@ $ gcloud services enable servicecontrol.googleapis.com
 
 
 ## Reference
-[Tutorial](https://beranger.medium.com/secure-google-cloud-functions-with-api-gateway-848f687963ae)
+[Tutorial Part-1](https://beranger.medium.com/secure-google-cloud-functions-with-api-gateway-848f687963ae)
+[Tutorial Part-2](https://beranger.medium.com/rate-limit-google-cloud-functions-with-api-gateway-19b54bb9d9e9)
