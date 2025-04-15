@@ -21,6 +21,8 @@ paths:
           description: Successful response
           schema:
             type: string
+      security:
+      - api_key: []
   /orderSmoothie:
     post:
       summary: Order a wonderful smoothie
@@ -34,3 +36,10 @@ paths:
           description: Successful response
           schema:
             type: string
+      security:
+      - api_key: []
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "key"
+    in: "query"
