@@ -7,6 +7,28 @@ schemes:
   - https
 produces:
   - application/json
+x-google-management:
+  metrics:
+    - name: "list-smoothies-request"
+      displayName: "List smoothie quota"
+      valueType: INT64
+      metricKind: DELTA
+    - name: "order-smoothie-request"
+      displayName: "Order smoothie quota"
+      valueType: INT64
+      metricKind: DELTA
+  quota:
+    limits:
+      - name: "list-smoothie-limit"
+        metric: "list-smoothies-request"
+        unit: "1/min/{project}"
+        values:
+          STANDARD: 2
+      - name: "order-smoothie-limit"
+        metric: "order-smoothie-request"
+        unit: "1/min/{project}"
+        values:
+          STANDARD: 2
 paths:
   /listSmoothies:
     get:
@@ -23,6 +45,9 @@ paths:
             type: string
       security:
       - api_key: []
+      x-google-quota:
+        metricCosts:
+          "list-smoothies-request": 1
   /orderSmoothie:
     post:
       summary: Order a wonderful smoothie
@@ -38,6 +63,9 @@ paths:
             type: string
       security:
       - api_key: []
+      x-google-quota:
+        metricCosts:
+          "list-smoothies-request": 1
 securityDefinitions:
   api_key:
     type: "apiKey"
